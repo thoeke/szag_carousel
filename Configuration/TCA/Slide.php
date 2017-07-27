@@ -9,7 +9,7 @@ $GLOBALS['TCA']['tx_szagcarousel_domain_model_slide'] = array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, link, abstract, image',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, link, abstract;;;richtext:rte_transform[mode=ts_links], image, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime, sorting'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, link, abstract;;;richtext:rte_transform[mode=ts_links], image, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -118,13 +118,7 @@ $GLOBALS['TCA']['tx_szagcarousel_domain_model_slide'] = array(
 					'link' => array(
 						'type' => 'popup',
 						'title' => 'Link auswählen',
-						'module' => array(
-                                                        'name' => 'wizard_element_browser',
-                                                        'urlParameters' => array(
-                                                                'mode' => 'wizard',
-                                                                'act' => 'file'
-                                                        )
-                                                ),
+						'script' => 'browse_links.php?mode=wizard',
 						'JSopenParams' => 'height=600,width=600,status=0,menubar=0,scrollbars=1',
 					),
 				),
@@ -144,7 +138,7 @@ $GLOBALS['TCA']['tx_szagcarousel_domain_model_slide'] = array(
 						'icon' => 'wizard_rte2.gif',
 						'notNewRecords'=> 1,
 						'RTEonly' => 1,
-                                                'module' => array('name' => 'wizard_rte'),
+						'script' => 'wizard_rte.php',
 						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
 						'type' => 'script'
 					)
@@ -160,7 +154,11 @@ $GLOBALS['TCA']['tx_szagcarousel_domain_model_slide'] = array(
 				$GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
 		),
-		
+		'sorting' => array(
+				'config' => array(
+						'type' => 'none',
+				),
+		),
 
 	),
 );

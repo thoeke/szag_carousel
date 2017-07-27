@@ -61,8 +61,5 @@ class SlideRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
             }
             return $result;
 	}
-        
-        
-            
 
 }

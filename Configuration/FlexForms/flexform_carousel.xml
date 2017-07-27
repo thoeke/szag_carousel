@@ -1,93 +1,92 @@
 <T3DataStructure>
 	<sheets>
-            <sDEF>
-                    <ROOT>
-                            <TCEforms>
-                                    <sheetTitle>Optionen</sheetTitle>
-                            </TCEforms>
-                            <type>array</type>
-                            <el>
-         <settings.mode>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Optionen</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<settings.mode>
             <TCEforms>
-                <label>Modus</label>
-                <config>
-                  <type>select</type>
-                  <items type="array">
-                    <numIndex index="0" type="array">
-                      <numIndex index="0">Content Modus</numIndex>
-                      <numIndex index="1">0</numIndex>
-                    </numIndex>
-                                <numIndex index="1" type="array">
-                      <numIndex index="0">Fullwidth Content Modus</numIndex>
-                      <numIndex index="1">1</numIndex>
-                    </numIndex>
-                    <numIndex index="2" type="array">
-                      <numIndex index="0">Headline Modus</numIndex>
-                      <numIndex index="1">2</numIndex>
-                    </numIndex>
-                        <numIndex index="3" type="array">
-                      <numIndex index="0">Default Modus</numIndex>
-                      <numIndex index="1">3</numIndex>
-                    </numIndex>
-                    <numIndex index="4" type="array">
-                      <numIndex index="0">Overhead Modus</numIndex>
-                      <numIndex index="1">4</numIndex>
-                    </numIndex>
-                  </items>
-                </config>
+							<label>Modus</label>
+							<config>
+							  <type>select</type>
+							  <items type="array">
+							    <numIndex index="0" type="array">
+							      <numIndex index="0">Content Modus</numIndex>
+							      <numIndex index="1">0</numIndex>
+							    </numIndex>
+									<numIndex index="1" type="array">
+							      <numIndex index="0">Fullwidth Content Modus</numIndex>
+							      <numIndex index="1">1</numIndex>
+							    </numIndex>
+							    <numIndex index="2" type="array">
+							      <numIndex index="0">Headline Modus</numIndex>
+							      <numIndex index="1">2</numIndex>
+							    </numIndex>
+								<numIndex index="3" type="array">
+							      <numIndex index="0">Default Modus</numIndex>
+							      <numIndex index="1">3</numIndex>
+							    </numIndex>
+                                <numIndex index="4" type="array">
+							      <numIndex index="0">Overhead Modus</numIndex>
+							      <numIndex index="1">4</numIndex>
+							    </numIndex>
+							  </items>
+							</config>
             </TCEforms>
           </settings.mode>
-	<settings.slides>
+					<settings.slides>
             <TCEforms>
                 <label>Slides</label>
                 <config>
                     <type>inline</type>
                     <items type="array"></items>
                     <foreign_table>tx_szagcarousel_domain_model_slide</foreign_table>
-                    <foreign_sortby>sorting</foreign_sortby>
                     <maxitems>10</maxitems>
                     <size>10</size>
                 </config>
             </TCEforms>
           </settings.slides>
-	<settings.teaser>
+					<settings.teaser>
             <TCEforms>
                 <label>Teaser</label>
                 <config>
                     <type>inline</type>
                     <items type="array"></items>
                     <foreign_table>tt_content</foreign_table>
-                    <foreign_sortby>sorting</foreign_sortby>
-                    <foreign_record_defaults type="array">
-                            <CType index="CType">szag_advanced_teaser_pi1</CType>
-                            <colPos index="colPos">1020</colPos>
-                    </foreign_record_defaults>
+										<foreign_sortby>sorting</foreign_sortby>
+										<foreign_record_defaults type="array">
+											<CType index="CType">szag_advanced_teaser_pi1</CType>
+											<colPos index="colPos">1020</colPos>
+										</foreign_record_defaults>
                     <maxitems>1</maxitems>
-                    <appearance type="array">
-                            <collapseAll>1</collapseAll>
-                            <enabledControls type="array">
-                                    <info>0</info>
-                                    <new>1</new>
-                                    <dragdrop>1</dragdrop>
-                                    <sort>1</sort>
-                                    <hide>1</hide>
-                                    <delete>1</delete>
-                                    <localize>1</localize>
-                            </enabledControls>
-                    </appearance>
+										<appearance type="array">
+											<collapseAll>1</collapseAll>
+											<enabledControls type="array">
+												<info>0</info>
+												<new>1</new>
+												<dragdrop>1</dragdrop>
+												<sort>1</sort>
+												<hide>1</hide>
+												<delete>1</delete>
+												<localize>1</localize>
+											</enabledControls>
+										</appearance>
                     <size>1</size>
                 </config>
             </TCEforms>
           </settings.teaser>
-	<settings.autoslide>
+					<settings.autoslide>
             <TCEforms>
-                <label>Automatisch abspielen. Abstand in Milisekunden. (1 - 99999)</label>
-                <config>
-                  <type>input</type>
-                  <size>5</size>
-                  <max>5</max>
-                  <eval>trim</eval>
-                </config>
+							<label>Automatisch abspielen. Abstand in Milisekunden. (1 - 99999)</label>
+							<config>
+							  <type>input</type>
+							  <size>5</size>
+							  <max>5</max>
+							  <eval>trim</eval>
+							</config>
             </TCEforms>
           </settings.autoslide>
 				</el>
