@@ -1,0 +1,24 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<div class="row">
+  <div class="sz-carousel_content-mode" id="sz-carousel_content-mode_{settings.contentObjectUid}">
+    <f:for each="{slides}" as="slide">
+      <div class="col-md-12">
+        <div class="row sz-carousel__slide sz-flexbox sz-flexbox_wrap">
+          <div class="col-xs-12 col-lg-8 col-xl-8">
+            <div class="sz-carousel_content__image">
+              <v:link.typolink configuration="{parameter: slide.link}">
+                  <f:image src="{slide.image.originalResource.originalFile.uid}" title="{slide.image.originalResource.title}" alt="{slide.image.originalResource.description}" />
+              </v:link.typolink>
+            </div>
+          </div>
+          <div class="col-xs-12 col-lg-4 col-xl-4">
+            <div class="sz-carousel_content__text">
+              <h3><f:format.raw>{slide.title}</f:format.raw></h3>
+              <f:format.html>{slide.abstract}</f:format.html>
+            </div>
+          </div>
+        </div>
+      </div>
+    </f:for>
+  </div>
+</div>

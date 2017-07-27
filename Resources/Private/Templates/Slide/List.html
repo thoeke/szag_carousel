@@ -1,0 +1,24 @@
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+  <f:flashMessages renderMode="div" />
+
+  <f:if condition="{settings.mode} == 0">
+    <f:render partial="Content" arguments="{_all}"/>
+  </f:if>
+
+  <f:if condition="{settings.mode} == 1">
+    <f:render partial="Fullwidth" arguments="{_all}"/>
+  </f:if>
+
+  <f:if condition="{settings.mode} == 3">
+    <f:render partial="Default" arguments="{_all}"/>
+  </f:if>
+
+  <f:if condition="{settings.mode} == 4">
+    <f:render partial="Overhead" arguments="{_all}"/>
+  </f:if>
+
+</f:section>

@@ -1,0 +1,22 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<div class="sz-carousel_overhead-wrap">
+    <div class="sz-carousel_overhead-container">
+        <div class="sz-carousel_overhead-mode" id="sz-carousel_overhead-mode_{settings.contentObjectUid}">
+          <f:for each="{slides}" as="slide">
+            <div class="sz-carousel__image sz-carousel__slide">
+              <v:link.typolink configuration="{parameter : slide.link}">
+                <f:image src="{slide.image.originalResource.originalFile.uid}" title="{slide.image.originalResource.title}" alt="{slide.image.originalResource.description}" />
+              </v:link.typolink>
+              <div class="sz-carousel__image-text">
+                <div class="container">
+                    <div class="sz-carousel__text">
+                        <h3><f:format.raw>{slide.title}</f:format.raw></h3>
+                        <f:format.html>{slide.abstract}</f:format.html>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </f:for>
+        </div>
+    </div>
+</div>
