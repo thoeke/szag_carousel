@@ -2,12 +2,30 @@
 <div class="sz-carousel_fullwidth-mode" id="sz-carousel_fullwidth-mode_{settings.contentObjectUid}">
   <f:for each="{slides}" as="slide">
     <div class="sz-carousel__image sz-carousel__slide">
-      <v:link.typolink configuration="{parameter : slide.link}">
-        <f:image src="{slide.image.originalResource.originalFile.uid}" title="{slide.image.originalResource.title}" alt="{slide.image.originalResource.description}" />
-      </v:link.typolink>
+        
+        <f:if condition="{slide.linkall}">
+            <f:then>
+                <f:link.typolink parameter="{slide.linkall}">
+                    <f:image src="{slide.image.originalResource.originalFile.uid}" title="{slide.image.originalResource.title}" alt="{slide.image.originalResource.description}" />
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <f:link.typolink parameter="{slide.link}">
+                    <f:image src="{slide.image.originalResource.originalFile.uid}" title="{slide.image.originalResource.title}" alt="{slide.image.originalResource.description}" />
+                </f:link.typolink>
+            </f:else>
+        </f:if>
+        
       <div class="sz-carousel__image-text">
         <h3><f:format.raw>{slide.title}</f:format.raw></h3>
         <f:format.html>{slide.abstract}</f:format.html>
+        
+        <f:if condition="{slide.linkall}">
+            <f:then>
+                <f:link.typolink parameter="{slide.linkall}" class="internal-link">weiterlesen</f:link.typolink>
+            </f:then>
+        </f:if>
+        
       </div>
     </div>
   </f:for>

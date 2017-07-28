@@ -9,6 +9,7 @@ CREATE TABLE tx_szagcarousel_domain_model_slide (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	link varchar(255) DEFAULT '' NOT NULL,
+        linkall varchar(255) DEFAULT '' NOT NULL,
 	abstract text NOT NULL,
 	image int(11) unsigned NOT NULL default '0',
 

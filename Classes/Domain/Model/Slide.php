@@ -45,6 +45,13 @@ class Slide extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var string
 	 */
 	protected $link = '';
+        
+        /**
+	 * linkall
+	 *
+	 * @var string
+	 */
+	protected $linkall = '';
 
 	/**
 	 * abstract
@@ -99,6 +106,25 @@ class Slide extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
+	 * Returns the linkall
+	 *
+	 * @return string $linkall
+	 */
+	public function getLinkall() {
+		return $this->linkall;
+	}
+
+	/**
+	 * Sets the linkall
+	 *
+	 * @param string $linkall
+	 * @return void
+	 */
+	public function setLinkall($linkall) {
+		$this->linkall = $linkall;
+	}
+
+        /**
 	 * Returns the abstract
 	 *
 	 * @return string $abstract

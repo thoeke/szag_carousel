@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $GLOBALS['TCA']['tx_szagcarousel_domain_model_slide'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_szagcarousel_domain_model_slide']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, link, abstract, image',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, link, linkall, abstract, image',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, link, abstract;;;richtext:rte_transform[mode=ts_links], image, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, link, linkall, abstract;;;richtext:rte_transform[mode=ts_links], image, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -118,11 +118,34 @@ $GLOBALS['TCA']['tx_szagcarousel_domain_model_slide'] = array(
 					'link' => array(
 						'type' => 'popup',
 						'title' => 'Link auswählen',
-						'script' => 'browse_links.php?mode=wizard',
+                                                'module' => array(
+                                                    'name' => 'wizard_link',
+                                                ),
 						'JSopenParams' => 'height=600,width=600,status=0,menubar=0,scrollbars=1',
 					),
 				),
-	      'softref' => 'typolink'
+                            'softref' => 'typolink'
+			),
+		),
+                'linkall' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:szag_carousel/Resources/Private/Language/locallang_db.xlf:tx_szagcarousel_domain_model_slide.linkall',
+			'config' => array(
+				'type' => 'input',
+				'size' => 30,
+				'eval' => 'trim',
+				'wizards' => array(
+					'_PADDING' => 2,
+					'link' => array(
+						'type' => 'popup',
+						'title' => 'Link auswählen',
+                                                'module' => array(
+                                                    'name' => 'wizard_link',
+                                                ),
+						'JSopenParams' => 'height=600,width=600,status=0,menubar=0,scrollbars=1',
+					),
+				),
+                            'softref' => 'typolink'
 			),
 		),
 		'abstract' => array(
@@ -133,16 +156,19 @@ $GLOBALS['TCA']['tx_szagcarousel_domain_model_slide'] = array(
 				'cols' => 40,
 				'rows' => 15,
 				'eval' => 'trim',
-				'wizards' => array(
-					'RTE' => array(
-						'icon' => 'wizard_rte2.gif',
+                                'wizards' => array(
+					'_PADDING' => 2,
+					'link' => array(
+                                                'icon' => 'wizard_rte2.gif',
 						'notNewRecords'=> 1,
 						'RTEonly' => 1,
-						'script' => 'wizard_rte.php',
+                                                'module' => array(
+                                                    'name' => 'wizard_rte',
+                                                ),
 						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
-						'type' => 'script'
-					)
-				)
+						'type' => 'script',
+					),
+				),
 			),
 		),
 		'image' => array(
